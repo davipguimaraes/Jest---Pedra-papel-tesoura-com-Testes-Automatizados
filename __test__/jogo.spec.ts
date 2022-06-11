@@ -1,4 +1,5 @@
 import verificaResultadoJogo, {
+	geraJogadaComputador,
 	JOGADA,
 	ResultadoDeJogada,
 	VENCEDOR,
@@ -70,6 +71,24 @@ describe('jogo', () => {
 				expect(resultadoDeJogada.jogada).toBe(JOGADA.TESOURA)
 				expect(resultadoDeJogada.vencedor).toBe(VENCEDOR.EMPATE)
 			})
+		})
+	})
+
+	describe('geraJogadaComputador', () => {
+		it('deve gerar jogada pedra', () => {
+			const funcao = jest.fn(() => 0)
+			const r = geraJogadaComputador(funcao)
+			expect(r).toBe(JOGADA.PEDRA)
+		})
+		it('deve gerar jogada papel', () => {
+			const funcao = jest.fn(() => 1)
+			const r = geraJogadaComputador(funcao)
+			expect(r).toBe(JOGADA.PAPEL)
+		})
+		it('deve gerar jogada tesoura', () => {
+			const funcao = jest.fn(() => 2)
+			const r = geraJogadaComputador(funcao)
+			expect(r).toBe(JOGADA.TESOURA)
 		})
 	})
 })

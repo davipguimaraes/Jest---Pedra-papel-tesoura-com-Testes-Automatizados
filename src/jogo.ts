@@ -15,9 +15,9 @@ export interface ResultadoDeJogada {
 }
 
 const vitoria = {
-	PEDRA: JOGADA.TESOURA,
-	TESOURA: JOGADA.PAPEL,
 	PAPEL: JOGADA.PEDRA,
+	TESOURA: JOGADA.PAPEL,
+	PEDRA: JOGADA.TESOURA,
 }
 export default function verificaResultadoJogo(
 	jogada_1: JOGADA,
@@ -40,4 +40,17 @@ export default function verificaResultadoJogo(
 		jogada: jogada_2,
 		vencedor: VENCEDOR.JOGADOR_2,
 	}
+}
+
+export function geraJogadaAleatoria() {
+	return (Math.random() * 10) % 3
+}
+
+export function geraJogadaComputador(
+	geradorJogadaAleatoria: () => number
+): JOGADA {
+	const jogadaAleatoria = geradorJogadaAleatoria()
+	if (jogadaAleatoria == 0) return JOGADA.PEDRA
+	if (jogadaAleatoria == 1) return JOGADA.PAPEL
+	return JOGADA.TESOURA
 }
