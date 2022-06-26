@@ -3,7 +3,7 @@ import verificaResultadoJogo, {
 	JOGADA,
 	ResultadoDeJogada,
 	VENCEDOR,
-} from '../src/jogo'
+} from '../src/model/jogo'
 
 describe('jogo', () => {
 	describe('VerificaResultadoDeJogada', () => {

@@ -15,7 +15,14 @@
 			integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 			crossorigin="anonymous"
 		/>
+		<link
+			class="favicon"
+			rel="icon"
+			type="image/png"
+			href="assets/mao-papel.png"
+		/>
 
+		<link rel="stylesheet" href="style.css" />
 		<title>Pedra, Papel ou Tesoura!</title>
 	</head>
 	<body>
@@ -23,7 +30,10 @@
 			<h1>Pedra, Papel ou Tesoura!</h1>
 
 			<section class="my-4">
-				<h2>Usuário</h2>
+				<div class="row justify-content-between">
+					<h2>Usuário</h2>
+					<button class="btn btn-info jogar">Jogar</button>
+				</div>
 				<div class="row my-4 col-8">
 					<label class="card col-3 mx-2">
 						<img
@@ -81,6 +91,17 @@
 					</label>
 				</div>
 			</section>
+			<section class="my-4">
+				<div class="row justify-content-between">
+					<h2>Computador</h2>
+				</div>
+				<div class="row my-4 col-8">
+					<div class="alert alert-primary jogando" role="alert">
+						Esperando
+					</div>
+					<div class="jogada-do-computador"></div>
+				</div>
+			</section>
 		</div>
 
 		<!-- Optional JavaScript -->
@@ -101,6 +122,6 @@
 			crossorigin="anonymous"
 		></script>
 
-		<script type="model" src="index.js"></script>
+		<script type="module" src="dist/bundle.js"></script>
 	</body>
 </html>
